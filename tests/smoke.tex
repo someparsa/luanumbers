@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{luanumbers}
+\LuaNumbersSetup{decimals=1,warnings=error}
+
+\begin{document}
+Automatic decimals: 3.14159, 3.00, -1.234, 6.022e2. Integer: 7.
+
+\begin{luanumbersexclude}
+\section{Selected object 3.14159}
+\label{sec:selected-3.14159}
+This selected object remains 3.14159.
+\end{luanumbersexclude}
+
+Automatic processing resumes here: 3.14159.
+
+\LuaNumbersOff
+\directlua{
+  assert(luanumbers.format("3.14159") == "3.1")
+  assert(luanumbers.format("3.00") == "3.0")
+  assert(luanumbers.format("-1.234") == "-1.2")
+}
+\LuaNumbersOn
+\end{document}

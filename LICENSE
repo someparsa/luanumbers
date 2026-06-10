@@ -1,0 +1,16 @@
+The luanumbers package
+Copyright 2026 Parsa Yazdi
+
+This work may be distributed and/or modified under the conditions of the LaTeX
+Project Public License, either version 1.3c of this license or (at your option)
+any later version. The latest version of this license is available at:
+
+  https://www.latex-project.org/lppl/
+
+This work has the LPPL maintenance status "maintained".
+
+The Current Maintainer of this work is Parsa Yazdi.
+
+This work consists of the files luanumbers.sty, luanumbers.lua, the documented
+source and compiled documentation, examples, tests, and supporting repository
+files distributed with the package.

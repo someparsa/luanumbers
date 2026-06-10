@@ -1,0 +1,62 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{luanumbers}[2026/06/10 v0.5.0 Document-wide decimal adjustment from one preamble setup]
+
+\RequirePackage{iftex}
+\ifluatex\else
+  \PackageError{luanumbers}{This package requires LuaLaTeX}
+    {Compile the document with lualatex instead of pdflatex or xelatex.}
+\fi
+
+\RequirePackage{luatexbase}
+
+\directlua{luanumbers = require("luanumbers")}
+
+\newcommand\LuaNumbersSetup[1]{%
+  \directlua{luanumbers.configure("\luaescapestring{#1}")}%
+}
+
+\newcommand\LuaNumbersOn{\directlua{luanumbers.enable()}}
+\newcommand\LuaNumbersOff{\directlua{luanumbers.disable()}}
+
+\newcommand\LuaNumbersProtectEnvironment[1]{%
+  \directlua{luanumbers.protect_environment("\luaescapestring{#1}")}%
+}
+
+\newcommand\LuaNumbersUnprotectEnvironment[1]{%
+  \directlua{luanumbers.unprotect_environment("\luaescapestring{#1}")}%
+}
+
+\newcommand\LuaNumbersProtectEnvironments[1]{%
+  \directlua{luanumbers.protect_environments("\luaescapestring{#1}")}%
+}
+
+\newcommand\LuaNumbersUnprotectEnvironments[1]{%
+  \directlua{luanumbers.unprotect_environments("\luaescapestring{#1}")}%
+}
+
+\newcommand\LuaNumbersProtectCommand[1]{%
+  \directlua{luanumbers.protect_command("\luaescapestring{#1}")}%
+}
+
+\newcommand\LuaNumbersUnprotectCommand[1]{%
+  \directlua{luanumbers.unprotect_command("\luaescapestring{#1}")}%
+}
+
+\newcommand\LuaNumbersProtectCommands[1]{%
+  \directlua{luanumbers.protect_commands("\luaescapestring{#1}")}%
+}
+
+\newcommand\LuaNumbersUnprotectCommands[1]{%
+  \directlua{luanumbers.unprotect_commands("\luaescapestring{#1}")}%
+}
+
+\newcommand\LuaNumber[1]{%
+  \directlua{tex.sprint(luanumbers.format("\luaescapestring{#1}"))}%
+}
+
+% The Lua input callback recognizes this environment before TeX executes it.
+\newenvironment{luanumbersexclude}{}{}
+
+\AtBeginDocument{\directlua{luanumbers.register(); luanumbers.enable()}}
+
+\endinput

@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use luanumbers, please cite this software."
+title: "luanumbers: Document-Wide Decimal Adjustment for LuaLaTeX"
+type: software
+authors:
+  - family-names: "Yazdi"
+    given-names: "Parsa"
+version: 0.5.0
+date-released: 2026-06-10
+license: LPPL-1.3c
+abstract: >-
+  A LuaLaTeX package that applies a decimal-formatting policy from one preamble
+  setup to eligible numeric literals throughout a document.
