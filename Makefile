@@ -1,6 +1,6 @@
 VERSION := $(shell cat VERSION)
 DIST_DIR := dist/luanumbers-$(VERSION)
-DIST_FILES := README.md LICENSE CHANGELOG.md CONTRIBUTING.md CITATION.cff \
+DIST_FILES := README.md LICENSE NOTICE CHANGELOG.md CONTRIBUTING.md CITATION.cff \
 	VERSION Makefile documentation.pdf luanumbers.sty luanumbers.lua
 
 .PHONY: all check version-check doc examples test dist clean

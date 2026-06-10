@@ -141,4 +141,5 @@ See [CHANGELOG.md](CHANGELOG.md) for release history and
 ## License
 
 Copyright 2026 Parsa Yazdi. This work is distributed under the LaTeX Project
-Public License, version 1.3c or later. See [LICENSE](LICENSE).
+Public License, version 1.3c or later. See the canonical [LICENSE](LICENSE)
+and package-specific [NOTICE](NOTICE).

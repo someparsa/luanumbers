@@ -1,3 +1,6 @@
+-- Copyright 2026 Parsa Yazdi
+-- Distributed under LPPL 1.3c or later; see LICENSE and NOTICE.
+
 local M = {
   version = "0.5.0",
   decimals = 2,
